@@ -17,20 +17,24 @@ int main()
    //Demande à l'utilisateur combien de représentants il y a
    cout << "Combien de représentent? ";
    cin >> nbrepresentent;
-   //Calcule pour le nombre de représentant;
-   for (int i = 0; i < nbrepresentent; i++)
+   //Premier représemtant
+   cout << "Le totale des ventes ";
+   cin >> commission;
+   nbrepresentent--;
+   if (commission != -1)
    {
-      cout << "Le totale des ventes ";
-      cin >> commission;
-      //Si la commission est égales à -1 sa quit le programme
-      if (commission == -1)
+      int i = 0;
+      while (i < nbrepresentent && commission != -1)
       {
-         exit(1);
+         //Calcule salire totale et l'affiche
+         cout << "Son salaire est: " << (((commission / 100) * pourcentage) + salairebase) << endl;
+         cout << "Le totale des ventes ";
+         cin >> commission;
+         i++;
       }
-      //Calcule salire totale et l'affiche
-      cout << "Son salaire est: " << (((commission / 100) * pourcentage) + salairebase) << endl;
-
    }
+   
+   
 
 
    system("pause");
